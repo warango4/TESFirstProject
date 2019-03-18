@@ -55,9 +55,9 @@ class DAO_user:
         else:
             next_id = 0    
 
-        self.db_connection.execute("INSERT INTO customers (id, name, lastname, gender, \
-                        birthday, civil) VALUES (?,?,?,?,?,?);" , (next_id,
-                        user.name, user.lastname, user.gender, user.birthday,
-                        user.civil))
+        self.db_connection.execute("INSERT INTO users (id, name, lastname, gender, \
+                        bd, civilStatus) VALUES (?,?,?,?,?,?);" , (next_id,
+                        user.name, user.lastname, user.gender, user.bd,
+                        user.civilStatus))
         self.db_connection.commit()
 

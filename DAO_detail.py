@@ -23,7 +23,7 @@ class DAO_detail:
         self.db_connection.execute(upd_detail)
         self.db_connection.commit()
 
-    def delete_bill(self, id_detail):
+    def delete_detail(self, id_detail):
         query_delete_detail = "DELETE FROM details WHERE id = %d ;" % (id_detail)
         self.db_connection.execute(query_delete_detail)
         self.db_connection.commit()
@@ -52,5 +52,5 @@ class DAO_detail:
             next_id = 0
 
         self.db_connection.execute("INSERT into details (id, type, desc, cost) VALUES (?, ?, ?, ?);",\
-            (next_id, detail.detail_type, detail.desc, detail.cost))
+            (next_id, detail.type, detail.desc, detail.cost))
         self.db_connection.commit()
